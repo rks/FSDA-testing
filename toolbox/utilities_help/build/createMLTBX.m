@@ -1,4 +1,4 @@
-function createMLTBX 
+function createMLTBX
 %% Create toolbox file for FSDA, both locally and in a CI action
 
 % Specify the version number, please use the format 'major.minor.revision'
@@ -36,13 +36,14 @@ publish('Contents.m');
 
 %% Create toolbox project file
 
-% Create our desired toolbox options 
+% Create our desired toolbox options
 %
 % 1. Our File Exchange UUID (currently 20669fbc-61ca-4050-bc87-575422f4c0b8)
 % 2. By default ALL files should be packaged in the toolbox - we will
 %   exclude those that are not needed below using some helpers.
 
-uuid = '20669fbc-61ca-4050-bc87-575422f4c0b8';
+uuid = '9117d69d-414a-4e8f-80fd-caae2e156e24';
+% uuid = '20669fbc-61ca-4050-bc87-575422f4c0b8';
 % uuid = 'd6e027ff-e27e-448a-aa53-ef8f1ba4b647';
 
 options = matlab.addons.toolbox.ToolboxOptions(FSDAroot, uuid);
@@ -85,7 +86,7 @@ options = removeFilesFromToolboxPackage(options, [...
     "FSDA.prj"
     "helpfiles" + fsep + "FSDA" + fsep + "images" + fsep + "githubimgexamples.jpg"
     "helpfiles" + fsep + "FSDA" + fsep + "images" + fsep + "githubimgindex.jpg"
-    "helpfiles" + fsep + "FSDA" + fsep + "images" + fsep + "githubimgtutorials.jpg"    
+    "helpfiles" + fsep + "FSDA" + fsep + "images" + fsep + "githubimgtutorials.jpg"
     "README.md"
     "utilities_help" + fsep + "FlowChart.pptx"
     ]);
@@ -94,7 +95,7 @@ options = removeFilesFromToolboxPackage(options, [...
 % Define the paths that we want to add to an installed MATLAB path
 % NOTE - we need the root as well as some sub-folders so include the empty
 % string at the beginning
-% IMPORTANT - the folders must be added in a bottom-up style, starting from 
+% IMPORTANT - the folders must be added in a bottom-up style, starting from
 % the subfolder, failure to do so results in an exception.
 pathsToAdd = [ ...
     ""
@@ -111,8 +112,8 @@ pathsToAdd = [ ...
     "utilities_stat"
     "utilities_help"
     "examples"
-    "FSDAdemos"    
-    "apps"    
+    "FSDAdemos"
+    "apps"
     % "helpfiles" + fsep + "FSDA"
     % "helpfiles" + fsep + "includes" + fsep + "product" + fsep + "css"
     % "helpfiles" + fsep + "includes" + fsep + "product" + fsep + "fonts"
@@ -133,7 +134,7 @@ options.Description="Flexible Statistics and Data Analysis (FSDA) extends MATLAB
     "a robust analysis of data sets affected by different sources of heterogeneity. " + ...
     "It is open source software licensed under the European Union Public Licence (EUPL). " + ...
     "FSDA is a joint project by the University of Parma and the Joint Research Centre " + ...
-    "of the European Commission."; 
+    "of the European Commission.";
 
 options.Summary="Flexible Statistics Data Analysis Toolbox";
 
@@ -143,7 +144,7 @@ options.AuthorEmail = "FSDA@unipr.it";
 
 options.AuthorCompany = "University of Parma (UNIPR) and Joint Research Centre of the " + ...
     "European Commission(JRC).";
- 
+
 % Define the final architectures that we will correctly work on
 options.SupportedPlatforms.Win64 = true;
 options.SupportedPlatforms.Maci64 = true;
